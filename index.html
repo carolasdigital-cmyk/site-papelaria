@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carolas Papelaria Personalizada | Catálogo Oficial</title>
+    <title>Carolas Papelaria Personalizada | Catálogo de Festas</title>
     <!-- Fontes Premium e Ícones -->
     <link href="https://googleapis.com" rel="stylesheet">
     <script src="https://unpkg.com"></script>
@@ -16,17 +16,9 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        :root {
-            --primary: #8b5cf6;
-            --primary-light: #ddd6fe;
-            --bg-gradient: linear-gradient(135deg, #fff5f5 0%, #fef08a 50%, #e0e7ff 100%);
-            --text-main: #1e1b4b;
-            --text-muted: #4b5563;
-        }
-
         body {
             background: #fafafa;
-            color: var(--text-main);
+            color: #1e1b4b;
             overflow-x: hidden;
         }
 
@@ -49,7 +41,7 @@
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             font-size: 22px;
-            color: #6d28d9;
+            color: #db2777; /* Rosa mais voltado para o nicho artesanal */
         }
 
         .contact-top-btn {
@@ -74,12 +66,12 @@
         /* Banner Principal / Hero Section */
         .hero {
             margin-top: 70px;
-            background: linear-gradient(135deg, #fef1f2 0%, #fae8ff 100%);
+            background: linear-gradient(135deg, #fff1f2 0%, #fdf2f8 100%);
             padding: 80px 5% 60px 5%;
             text-align: center;
             border-bottom-left-radius: 40px;
             border-bottom-right-radius: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.01);
         }
 
         .hero h2 {
@@ -91,7 +83,7 @@
         }
 
         .hero p {
-            color: var(--text-muted);
+            color: #4b5563;
             font-size: 16px;
             max-width: 600px;
             margin: 0 auto 30px auto;
@@ -120,7 +112,7 @@
             left: 0;
             width: 40px;
             height: 3px;
-            background: #8b5cf6;
+            background: #db2777;
             border-radius: 2px;
         }
 
@@ -136,7 +128,7 @@
             background: white;
             border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
             border: 1px solid rgba(0,0,0,0.03);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
@@ -145,10 +137,10 @@
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 35px rgba(0,0,0,0.07);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.06);
         }
 
-        /* Placeholder visual premium para substituir fotos provisórias */
+        /* Gradientes em tons Pastéis e Candy Colors de Festa */
         .product-image-placeholder {
             height: 220px;
             display: flex;
@@ -156,14 +148,16 @@
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 40px;
+            font-size: 46px;
             position: relative;
         }
 
-        .p1 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
-        .p2 { background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); }
-        .p3 { background: linear-gradient(135deg, #ffd1ff 0%, #f107a3 100%); }
-        .p4 { background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%); }
+        .p-topo { background: linear-gradient(135deg, #fed7aa 0%, #fbcfe8 100%); }
+        .p-caixinha { background: linear-gradient(135deg, #fef08a 0%, #fbcfe8 100%); }
+        .p-kit { background: linear-gradient(135deg, #fbcfe8 0%, #c7d2fe 100%); }
+        .p-balao { background: linear-gradient(135deg, #bfdbfe 0%, #fbcfe8 100%); }
+        .p-etiqueta { background: linear-gradient(135deg, #bbf7d0 0%, #e0f2fe 100%); }
+        .p-laco { background: linear-gradient(135deg, #e9d5ff 0%, #fbcfe8 100%); }
 
         .product-info {
             padding: 20px;
@@ -176,13 +170,13 @@
             font-size: 11px;
             font-weight: 700;
             text-transform: uppercase;
-            color: #8b5cf6;
+            color: #db2777;
             letter-spacing: 1px;
             margin-bottom: 6px;
         }
 
         .product-name {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             color: #1e1b4b;
             margin-bottom: 8px;
@@ -191,7 +185,7 @@
 
         .product-desc {
             font-size: 13px;
-            color: var(--text-muted);
+            color: #4b5563;
             line-height: 1.5;
             margin-bottom: 15px;
             flex-grow: 1;
@@ -207,7 +201,7 @@
         }
 
         .product-price {
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 800;
             color: #1e1b4b;
         }
@@ -215,7 +209,7 @@
         .order-btn {
             background: #10b981;
             color: white;
-            padding: 10px 14px;
+            padding: 8px 14px;
             border-radius: 12px;
             text-decoration: none;
             font-size: 13px;
@@ -230,7 +224,7 @@
             background: #059669;
         }
 
-        /* Rodapé técnico MSP */
+        /* Rodapé */
         footer {
             background: #111827;
             color: #9ca3af;
@@ -243,7 +237,7 @@
         .msp-tag {
             font-weight: 700;
             letter-spacing: 1px;
-            color: #a78bfa;
+            color: #f472b6;
             margin-top: 10px;
             text-transform: uppercase;
         }
@@ -260,58 +254,57 @@
     <header>
         <div class="logo">Carolas Papelaria</div>
         <a href="https://wa.me" target="_blank" class="contact-top-btn">
-            <i class="ph ph-whatsapp-logo"></i> Chamar no WhatsApp
+            <i class="ph ph-whatsapp-logo"></i> Orçamento via WhatsApp
         </a>
     </header>
 
     <!-- Banner Principal -->
     <section class="hero">
-        <h2>Seu dia a dia mais criativo e personalizado</h2>
-        <p>Explore nosso catálogo de mimos exclusivos. Cada detalhe é produzido artesanalmente para transformar seus momentos de organização e estudo.</p>
+        <h2>Papelaria Personalizada & Scrap Festa</h2>
+        <p>A identidade visual da sua comemoração feita em recortes precisos de alta gramatura, camadas de papel especial e mimos exclusivos.</p>
     </section>
 
     <!-- Área de Produtos -->
     <main class="catalog-container">
-        <h3 class="section-title">Nossos Destaques</h3>
+        <h3 class="section-title">Nossos Mimos</h3>
         
         <div class="products-grid">
             
-            <!-- PRODUTO 1 -->
+            <!-- TOPO DE BOLO -->
             <div class="product-card">
-                <div class="product-image-placeholder p1">
-                    <i class="ph ph-notebook"></i>
+                <div class="product-image-placeholder p-topo">
+                    <i class="ph ph-cake"></i>
                 </div>
                 <div class="product-info">
-                    <div class="product-category">Agendas & Cadernos</div>
-                    <h4 class="product-name">Agenda Planner 2026 Premium</h4>
-                    <p class="product-desc">Planejador anual completo com capa dura laminada, hot stamping gold, divisórias mensais e folhas de 90g.</p>
+                    <div class="product-category">Topo de Bolo</div>
+                    <h4 class="product-name">Topo de Bolo 3D em Camadas</h4>
+                    <p class="product-desc">Personalizado com nome e idade. Produzido com técnicas de scrap, papel lamicote metalizado e acabamento de alto padrão.</p>
                     <div class="product-footer">
-                        <span class="product-price">R$ 89,90</span>
-                        <a href="https://wa.me?text=Olá!%20Gostaria%20de%20encomendar%20o%20Planner%202026" target="_blank" class="order-btn">
+                        <span class="product-price">Sob Consulta</span>
+                        <a href="https://wa.me?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20Topo%20de%20Bolo%20em%20Camadas" target="_blank" class="order-btn">
                             <i class="ph ph-whatsapp-logo"></i> Pedir
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- PRODUTO 2 -->
+            <!-- CAIXINHAS PERSONALIZADAS -->
             <div class="product-card">
-                <div class="product-image-placeholder p2">
-                    <i class="ph ph-coffee"></i>
+                <div class="product-image-placeholder p-caixinha">
+                    <i class="ph ph-package"></i>
                 </div>
                 <div class="product-info">
-                    <div class="product-category">Presentes</div>
-                    <h4 class="product-name">Caneca Cerâmica Personalizada</h4>
-                    <p class="product-desc">Caneca de cerâmica de alta qualidade com arte exclusiva e aplicação de nome em lettering dourado.</p>
+                    <div class="product-category">Lembrancinhas</div>
+                    <h4 class="product-name">Caixas Milk e Pirâmide de Luxo</h4>
+                    <p class="product-desc">Caixinhas temáticas para mesa de doces com apliques recortados em relevo, fechamento com laço estruturado e strass.</p>
                     <div class="product-footer">
-                        <span class="product-price">R$ 45,00</span>
-                        <a href="https://wa.me?text=Olá!%20Gostaria%20de%20encomendar%20a%20Caneca%20Personalizada" target="_blank" class="order-btn">
+                        <span class="product-price">Orçamento por Kit</span>
+                        <a href="https://wa.me?text=Olá!%20Quero%20saber%20mais%20sobre%20as%20Caixinhas%20Personalizadas%20de%20Luxo" target="_blank" class="order-btn">
                             <i class="ph ph-whatsapp-logo"></i> Pedir
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- PRODUTO 3 -->
+            <!-- KIT COMPLETO PEGUE E MONTE -->
             <div class="product-card">
-                <div class="product-image-placeholder p3">
