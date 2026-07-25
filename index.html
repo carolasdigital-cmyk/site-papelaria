@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carolas Papelaria Personalizada | Catálogo</title>
-    <!-- Fontes Elegantes e Ícones -->
+    <title>Carolas Papelaria Personalizada | Site Oficial</title>
+    <!-- Fontes Premium e Ícones -->
     <link href="https://googleapis.com" rel="stylesheet">
     <script src="https://unpkg.com"></script>
     
@@ -14,281 +14,336 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* O degradê moderno que você gostou */
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 24px;
-            color: #2d3748;
+            background: #fafafa;
+            color: #1e1b4b;
+            padding-top: 80px;
         }
 
-        .container {
+        /* NAVBAR / MENU SUPERIOR COMPLETO */
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: fixed;
+            top: 0;
             width: 100%;
-            max-width: 460px;
-            text-align: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            padding: 40px 24px 32px 24px;
-            border-radius: 32px;
-            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 24px;
+            color: #764ba2;
+            text-decoration: none;
         }
 
-        /* Espaço preparado para a foto da menina ou mascote no futuro. Por enquanto exibe um ícone lindo de festa */
-        .avatar-container {
-            width: 90px;
-            height: 90px;
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4b5563;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #764ba2;
+        }
+
+        .nav-whatsapp-btn {
+            background: #10b981;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+
+        .nav-whatsapp-btn:hover {
+            background: #059669;
+            transform: translateY(-1px);
+        }
+
+        /* SEÇÃO 1: INÍCIO (HERO BANNER) */
+        .hero-section {
+            background: linear-gradient(135deg, #fff1f2 0%, #fdf2f8 50%, #f3e8ff 100%);
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            border-bottom-left-radius: 60px;
+            border-bottom-right-radius: 60px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 46px;
+            color: #1e1b4b;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            color: #4b5563;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        /* CONTAINER DA FOTO DA MENINA (ROSTO DA MARCA) */
+        .hero-avatar-container {
+            width: 320px;
+            height: 320px;
             background: linear-gradient(135deg, #db2777, #764ba2);
-            border-radius: 50%;
-            margin: 0 auto 20px auto;
+            border-radius: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 38px;
+            font-size: 120px;
             color: white;
-            box-shadow: 0 12px 24px rgba(118, 75, 162, 0.3);
+            box-shadow: 0 30px 60px rgba(118, 75, 162, 0.2);
             overflow: hidden;
+            position: relative;
         }
 
-        .avatar-container img {
+        .hero-avatar-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(118, 75, 162, 0.1);
-            color: #764ba2;
-            padding: 6px 14px;
-            border-radius: 100px;
-            font-size: 11px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
+        /* SEÇÃO 2: CATÁLOGO COMPLETO POR ABAS/CATEGORIAS */
+        .catalog-section {
+            padding: 100px 8%;
+            max-width: 1300px;
+            margin: 0 auto;
+            text-align: center;
         }
 
-        .badge .dot {
-            width: 6px;
-            height: 6px;
-            background-color: #10b981;
-            border-radius: 50%;
-            display: inline-block;
-        }
-
-        h1 {
-            font-size: 26px;
-            font-weight: 800;
-            color: #1e1b4b;
-            line-height: 1.2;
-            margin-bottom: 6px;
-            letter-spacing: -0.5px;
-        }
-
-        .subtitle {
+        .section-title {
             font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: #6b7280;
-            font-size: 15px;
-            margin-bottom: 20px;
+            font-size: 32px;
+            margin-bottom: 50px;
+            color: #1e1b4b;
         }
 
-        .description {
-            font-size: 13px;
-            line-height: 1.6;
-            color: #4b5563;
-            margin-bottom: 28px;
-        }
-
-        .action-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        /* Estilo de botão premium em lista (estilo catálogo de luxo) */
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 20px;
-            border-radius: 18px;
-            text-decoration: none;
-            color: #1e293b;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            border-color: #764ba2;
-            box-shadow: 0 10px 20px rgba(118, 75, 162, 0.12);
-        }
-
-        /* Botão de destaque para a Loja/Catálogo Geral na InfinityPay */
-        .btn-main-store {
-            background: #0f172a;
-            color: #ffffff;
-            border: 1px solid #0f172a;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
-        }
-
-        .btn-main-store:hover {
-            background: #1e293b;
-            border-color: #1e293b;
-            box-shadow: 0 12px 20px rgba(15, 23, 42, 0.25);
-        }
-
-        .btn-content {
-            display: flex;
-            align-items: center;
-            gap: 14px;
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
             text-align: left;
         }
 
-        .btn-content i {
-            font-size: 24px;
-            color: #764ba2;
-        }
-
-        .btn-main-store .btn-content i {
-            color: #ffffff;
-        }
-
-        .btn-text {
+        .product-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
         }
 
-        .btn-title {
-            font-size: 14px;
-            font-weight: 700;
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 26px 45px rgba(118, 75, 162, 0.08);
         }
 
-        .btn-desc {
+        .product-image {
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 54px;
+        }
+
+        .p-topo { background: linear-gradient(135deg, #fed7aa 0%, #fbcfe8 100%); }
+        .p-caixinha { background: linear-gradient(135deg, #fef08a 0%, #fbcfe8 100%); }
+        .p-balao { background: linear-gradient(135deg, #bfdbfe 0%, #fbcfe8 100%); }
+        .p-kit { background: linear-gradient(135deg, #fbcfe8 0%, #c7d2fe 100%); }
+
+        .product-info {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-tag {
             font-size: 11px;
-            color: #64748b;
-            font-weight: 500;
-            margin-top: 2px;
-        }
-
-        .btn-main-store .btn-desc {
-            color: #94a3b8;
-        }
-
-        .arrow-icon {
-            font-size: 14px;
-            opacity: 0.4;
-            transition: transform 0.2s ease;
-        }
-
-        .btn:hover .arrow-icon {
-            transform: translateX(4px);
-            opacity: 0.8;
-            color: #764ba2;
-        }
-
-        .btn-main-store:hover .arrow-icon {
-            color: #ffffff;
-        }
-
-        footer {
-            margin-top: 32px;
-            font-size: 10px;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 700;
+            font-weight: 800;
             text-transform: uppercase;
+            color: #db2777;
             letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e1b4b;
+            margin-bottom: 10px;
+        }
+
+        .product-desc {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 18px;
+            border-top: 1px solid #f3f4f6;
+        }
+
+        .product-price {
+            font-size: 15px;
+            font-weight: 800;
+            color: #1e1b4b;
+        }
+
+        .order-btn {
+            background: #10b981;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* SEÇÃO 3: SOBRE NÓS */
+        .about-section {
+            background: #f3e8ff;
+            padding: 90px 8%;
+            text-align: center;
+            border-radius: 50px;
+            max-width: 1150px;
+            margin: 40px auto;
+        }
+
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #4b5563;
+            margin-top: 20px;
+        }
+
+        /* SEÇÃO 4: CONTATO & LINK INFINITYPAY */
+        .contact-section {
+            padding: 100px 8%;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 40px;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            border: 1px solid #f3f4f6;
+        }
+
+        .btn-infinity-store {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: #000000;
+            color: white;
+            padding: 16px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* RODAPÉ */
+        footer {
+            background: #111827;
+            color: #9ca3af;
+            padding: 40px 8%;
+            text-align: center;
+            font-size: 12px;
+            margin-top: 80px;
+        }
+
+        .msp-footer {
+            font-weight: 700;
+            color: #a78bfa;
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 900px) {
+            .hero-section { flex-direction: column; text-align: center; padding: 60px 5%; }
+            .hero-content { text-align: center; }
+            .hero-avatar-container { width: 240px; height: 240px; font-size: 80px; }
+            nav { display: none; } /* Esconde o menu extenso no celular para simplificar */
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="card">
-            
-            <!-- Se você subir um arquivo chamado "menina.png" no seu GitHub, a foto dela aparece aqui automaticamente substituindo as estrelas -->
-            <div class="avatar-container">
-                <!-- <img src="menina.png" alt="Carolas Papelaria"> -->
-                <i class="ph ph-sparkles"></i>
-            </div>
-            
-            <div class="badge">
-                <span class="dot"></span>Orçamentos Disponíveis
-            </div>
-            
-            <h1>Carolas Papelaria</h1>
-            <div class="subtitle">Personalizada & Scrap Festa</div>
-            
-            <p class="description">Escolha o produto desejado para solicitar um orçamento exclusivo no WhatsApp ou acesse nosso catálogo de pagamentos online.</p>
-            
-            <div class="action-buttons">
-                
-                <!-- LINK DA LOJA INFINITYPAY (Troque o # pelo link real quando quiser) -->
-                <a href="#" target="_blank" class="btn btn-main-store">
-                    <div class="btn-content">
-                        <i class="ph ph-shopping-bag-open"></i>
-                        <div class="btn-text">
-                            <span class="btn-title">Catálogo Completo & Pagamentos</span>
-                            <span class="btn-desc">Acesse nossa loja virtual na InfinityPay</span>
-                        </div>
-                    </div>
-                    <i class="ph ph-caret-right arrow-icon"></i>
-                </a>
+    <!-- NAVBAR / MENU SUPERIOR -->
+    <header>
+        <a href="#inicio" class="logo">Carolas Papelaria</a>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#sobre">Sobre Nós</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <a href="https://wa.me" target="_blank" class="nav-whatsapp-btn">
+            <i class="ph ph-whatsapp-logo"></i> Fazer Pedido
+        </a>
+    </header>
 
-                <!-- PRODUTO: TOPO DE BOLO -->
-                <a href="https://wa.me de um orçamento para um Topo de Bolo em Camadas" target="_blank" class="btn">
-                    <div class="btn-content">
-                        <i class="ph ph-cake"></i>
-                        <div class="btn-text">
-                            <span class="btn-title">Topos de Bolo em Camadas</span>
-                            <span class="btn-desc">Modelos em 3D, lamicote e scrap de luxo</span>
-                        </div>
-                    </div>
-                    <i class="ph ph-caret-right arrow-icon"></i>
-                </a>
-
-                <!-- PRODUTO: CAIXINHAS PERSONALIZADAS -->
-                <a href="https://wa.me de ver modelos de Caixinhas Temáticas e Lembrancinhas" target="_blank" class="btn">
-                    <div class="btn-content">
-                        <i class="ph ph-package"></i>
-                        <div class="btn-text">
-                            <span class="btn-title">Caixinhas Milk & Lembrancinhas</span>
-                            <span class="btn-desc">Mimos estruturados com laços e apliques</span>
-                        </div>
-                    </div>
-                    <i class="ph ph-caret-right arrow-icon"></i>
-                </a>
-
-                <!-- PRODUTO: BALÕES -->
-                <a href="https://wa.me de encomendar um Balão Bubble Personalizado" target="_blank" class="btn">
-                    <div class="btn-content">
-                        <i class="ph ph-balloon"></i>
-                        <div class="btn-text">
-                            <span class="btn-title">Balões Bubble com Nome</span>
-                            <span class="btn-desc">Inflados com confete, vinil e adereços</span>
-                        </div>
-                    </div>
-                    <i class="ph ph-caret-right arrow-icon"></i>
-                </a>
-
-                <!-- PRODUTO: KIT PEGUE E MONTE -->
-                <a href="https://wa.me interesse no Kit Scrap Festa Completo" target="_blank" class="btn">
-                    <div class="btn-content">
-                        <i class="ph ph-gift"></i>
-                        <div class="btn-text">
-                            <span class="btn-title">Kits Completos para Festas</span>
+    <!-- ABA 1: INÍCIO -->
+    <section id="inicio" class="hero-section">
+        <div class="hero-content">
+            <h1>Mimos Afetivos & Scrap Festa de Luxo</h1>
