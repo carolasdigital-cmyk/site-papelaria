@@ -1,349 +1,617 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carolas Papelaria Personalizada | Site Oficial</title>
-    <!-- Fontes Premium e Ícones -->
-    <link href="https://googleapis.com" rel="stylesheet">
-    <script src="https://unpkg.com"></script>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            scroll-behavior: smooth;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carolas Papelaria Personalizada — Mimos afetivos e scrap festa</title>
+<meta name="description" content="Papelaria personalizada feita à mão: topos de bolo, caixinhas, balões e kits de festa sob medida. Peça pelo WhatsApp.">
+<meta name="theme-color" content="#6C4A86">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8E%80%3C/text%3E%3C/svg%3E">
 
-        body {
-            background: #fafafa;
-            color: #1e1b4b;
-            padding-top: 80px;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;0,9..144,900;1,9..144,500..700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
 
-        /* NAVBAR / MENU SUPERIOR COMPLETO */
-        header {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+<style>
+  /* ===================== TOKENS ===================== */
+  :root{
+    --paper:#FAF3EC;
+    --paper-alt:#F3E7DA;
+    --ink:#2E2A25;
+    --ink-soft:#6B6259;
+    --plum:#6C4A86;
+    --plum-dark:#4E3564;
+    --rose:#C94569;
+    --gold:#E8A33D;
+    --gold-deep:#A76A16;
+    --sage:#7C9A74;
+    --card:#FFFFFF;
+    --line: rgba(46,42,37,.10);
+    --shadow: 0 24px 55px rgba(108,74,134,.14);
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --font-display:'Fraunces', serif;
+    --font-body:'Plus Jakarta Sans', sans-serif;
+    --font-hand:'Caveat', cursive;
+  }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 24px;
-            color: #764ba2;
-            text-decoration: none;
-        }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:96px;}
+  body{
+    font-family:var(--font-body);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  ul{list-style:none;}
+  section{padding:110px 8%;}
+  .wrap{max-width:1180px;margin:0 auto;}
+  .eyebrow{
+    font-family:var(--font-hand);
+    font-size:22px;
+    color:var(--rose);
+    display:inline-block;
+    margin-bottom:10px;
+    transform:rotate(-2deg);
+  }
+  h1,h2,h3{font-family:var(--font-display); color:var(--ink); font-weight:700; line-height:1.15;}
+  h2{font-size:clamp(28px,3.4vw,40px); margin-bottom:14px;}
+  .section-head{text-align:center; max-width:620px; margin:0 auto 60px;}
+  .section-head p{color:var(--ink-soft); font-size:15.5px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:15px 26px; border-radius:100px; font-weight:700; font-size:14.5px;
+    text-decoration:none; border:none; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:focus-visible, a:focus-visible, button:focus-visible{
+    outline:3px solid var(--plum); outline-offset:3px;
+  }
+  .btn-primary{background:linear-gradient(135deg,#28C76F,#1FAE5F); color:#fff; box-shadow:0 14px 26px rgba(31,174,95,.28);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 18px 32px rgba(31,174,95,.34);}
+  .btn-outline{background:transparent; color:var(--plum); border:1.5px solid var(--plum);}
+  .btn-outline:hover{background:var(--plum); color:#fff; transform:translateY(-2px);}
+  .btn svg{width:18px; height:18px; flex-shrink:0;}
 
-        nav {
-            display: flex;
-            gap: 30px;
-        }
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+    html{scroll-behavior:auto;}
+  }
 
-        nav a {
-            text-decoration: none;
-            color: #4b5563;
-            font-size: 14px;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
+  /* ===================== HEADER ===================== */
+  header{
+    position:fixed; top:0; left:0; width:100%; z-index:1000;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 8%;
+    background:rgba(250,243,236,.82);
+    backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;
+    transition:padding .25s ease, border-color .25s ease, background .25s ease;
+  }
+  header.scrolled{padding:13px 8%; border-color:var(--line); background:rgba(250,243,236,.95);}
+  .logo{
+    font-family:var(--font-display); font-weight:700; font-size:23px;
+    color:var(--plum-dark); text-decoration:none; display:flex; align-items:center; gap:8px;
+  }
+  .logo span{font-family:var(--font-hand); color:var(--rose); font-size:26px;}
+  nav.main-nav{display:flex; align-items:center; gap:36px;}
+  nav.main-nav a{text-decoration:none; color:var(--ink); font-size:14.5px; font-weight:600; position:relative;}
+  nav.main-nav a::after{
+    content:''; position:absolute; left:0; bottom:-6px; width:0; height:2px; background:var(--rose);
+    transition:width .2s ease;
+  }
+  nav.main-nav a:hover::after{width:100%;}
+  .header-actions{display:flex; align-items:center; gap:14px;}
+  .btn-nav-wa{
+    background:#25D366; color:#fff; padding:11px 20px; border-radius:100px; text-decoration:none;
+    font-weight:700; font-size:13.5px; display:flex; align-items:center; gap:8px; transition:.2s;
+  }
+  .btn-nav-wa:hover{background:#1EBE5A; transform:translateY(-1px);}
+  .btn-nav-wa svg{width:16px; height:16px;}
 
-        nav a:hover {
-            color: #764ba2;
-        }
+  .hamburger{display:none; width:40px; height:40px; border:none; background:transparent; cursor:pointer; align-items:center; justify-content:center;}
+  .hamburger span, .hamburger span::before, .hamburger span::after{
+    content:''; display:block; width:22px; height:2px; background:var(--ink); position:relative; transition:.2s;
+  }
+  .hamburger span::before{position:absolute; top:-7px;}
+  .hamburger span::after{position:absolute; top:7px;}
 
-        .nav-whatsapp-btn {
-            background: #10b981;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 100px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-        }
+  .mobile-panel{
+    display:none; position:fixed; top:0; right:0; height:100vh; width:78%; max-width:320px;
+    background:var(--paper); z-index:1100; box-shadow:-10px 0 40px rgba(0,0,0,.12);
+    padding:100px 32px 40px; transform:translateX(100%); transition:transform .3s ease;
+  }
+  .mobile-panel.open{transform:translateX(0);}
+  .mobile-panel a{display:block; padding:14px 0; font-size:17px; font-weight:600; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink);}
+  .mobile-close{position:absolute; top:24px; right:24px; background:none; border:none; font-size:26px; cursor:pointer; color:var(--ink);}
+  .scrim{display:none; position:fixed; inset:0; background:rgba(46,42,37,.35); z-index:1050;}
+  .scrim.open{display:block;}
 
-        .nav-whatsapp-btn:hover {
-            background: #059669;
-            transform: translateY(-1px);
-        }
+  /* ===================== HERO ===================== */
+  .hero{
+    padding:170px 8% 100px;
+    display:grid; grid-template-columns:1.05fr .95fr; gap:60px; align-items:center;
+    position:relative; overflow:hidden;
+  }
+  .hero-copy h1{font-size:clamp(34px,4.6vw,54px); margin-bottom:20px;}
+  .hero-copy h1 em{font-style:italic; color:var(--rose);}
+  .hero-copy p{color:var(--ink-soft); font-size:16.5px; max-width:460px; margin-bottom:34px;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
 
-        /* SEÇÃO 1: INÍCIO (HERO BANNER) */
-        .hero-section {
-            background: linear-gradient(135deg, #fff1f2 0%, #fdf2f8 50%, #f3e8ff 100%);
-            padding: 100px 8%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-            border-bottom-left-radius: 60px;
-            border-bottom-right-radius: 60px;
-        }
+  .photo-stack{position:relative; height:400px;}
+  .photo-card{
+    position:absolute; width:230px; height:260px; background:var(--card);
+    border-radius:14px; padding:12px 12px 20px; box-shadow:var(--shadow);
+    display:flex; flex-direction:column;
+  }
+  .photo-card .frame{
+    flex:1; border-radius:8px; border:2px dashed rgba(108,74,134,.35);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+    color:var(--plum); background:linear-gradient(135deg,#F3E7DA,#FBF1E7);
+  }
+  .photo-card .frame svg{width:34px; height:34px; opacity:.7;}
+  .photo-card .frame small{font-family:var(--font-hand); font-size:15px; color:var(--ink-soft);}
+  .photo-card figcaption{
+    font-family:var(--font-hand); font-size:16px; text-align:center; margin-top:8px; color:var(--ink-soft);
+  }
+  .photo-card .tape{
+    position:absolute; top:-12px; left:50%; transform:translateX(-50%) rotate(-4deg);
+    width:78px; height:26px;
+    background:repeating-linear-gradient(45deg, rgba(232,163,61,.55) 0 6px, rgba(232,163,61,.3) 6px 12px);
+    border:1px solid rgba(255,255,255,.4); box-shadow:0 4px 8px rgba(0,0,0,.08);
+  }
+  .pc-1{top:0; left:20px; transform:rotate(-7deg); z-index:2;}
+  .pc-2{top:60px; left:170px; transform:rotate(5deg); z-index:3;}
+  .pc-3{top:190px; left:40px; transform:rotate(3deg); z-index:1;}
+  .hero-sticker{
+    position:absolute; font-size:34px; filter:drop-shadow(0 6px 10px rgba(0,0,0,.08));
+  }
+  .st-1{top:40px; right:6%;}
+  .st-2{bottom:6%; left:2%;}
 
-        .hero-content {
-            max-width: 600px;
-            text-align: left;
-        }
+  @media (min-width:901px){
+    .photo-card{transition:transform .3s ease;}
+    .photo-card:hover{transform:translateY(-6px) rotate(0deg) !important; z-index:5;}
+  }
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 46px;
-            color: #1e1b4b;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
+  /* ===================== TRUST RIBBON ===================== */
+  .ribbon{
+    background:var(--plum); color:#fff; padding:16px 0; overflow:hidden; white-space:nowrap;
+  }
+  .ribbon-track{display:inline-flex; gap:40px; animation:scroll-left 26s linear infinite;}
+  .ribbon-track span{font-family:var(--font-hand); font-size:19px; display:flex; align-items:center; gap:10px;}
+  @keyframes scroll-left{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion: reduce){.ribbon-track{animation:none;}}
 
-        .hero-content p {
-            color: #4b5563;
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 35px;
-        }
+  /* ===================== CATÁLOGO ===================== */
+  .catalog{background:var(--paper);}
+  .catalog-grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); gap:34px;
+  }
+  .product-card{
+    background:var(--card); border-radius:var(--radius-lg); overflow:hidden;
+    border:1px solid var(--line); box-shadow:0 10px 26px rgba(46,42,37,.04);
+    display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .product-card:hover{transform:translateY(-6px); box-shadow:var(--shadow);}
+  .product-photo{
+    height:190px; position:relative; display:flex; align-items:center; justify-content:center;
+    color:#fff;
+  }
+  .product-photo svg{width:44px; height:44px; opacity:.9;}
+  .product-photo::after{
+    content:'clique para trocar pela foto real'; position:absolute; bottom:10px; font-family:var(--font-hand);
+    font-size:13px; color:rgba(255,255,255,.85);
+  }
+  .p-topo{background:linear-gradient(135deg,#E9A9C1,#C94569);}
+  .p-caixinha{background:linear-gradient(135deg,#F3C567,#E8A33D);}
+  .p-balao{background:linear-gradient(135deg,#9BC2E8,#6C4A86);}
+  .p-kit{background:linear-gradient(135deg,#B9CDAF,#7C9A74);}
+  .product-info{padding:22px 22px 24px; display:flex; flex-direction:column; flex:1;}
+  .product-tag{font-family:var(--font-hand); font-size:16px; color:var(--rose); margin-bottom:4px;}
+  .product-name{font-family:var(--font-display); font-size:19px; font-weight:700; margin-bottom:8px;}
+  .product-desc{font-size:13.5px; color:var(--ink-soft); line-height:1.6; margin-bottom:18px; flex:1;}
+  .product-footer{
+    display:flex; align-items:center; justify-content:space-between; padding-top:16px; border-top:1px solid var(--line);
+  }
+  .product-price{font-size:14px; font-weight:800; color:var(--ink);}
+  .product-price small{display:block; font-weight:500; color:var(--ink-soft); font-size:11px;}
+  .order-btn{
+    background:#25D366; color:#fff; padding:9px 15px; border-radius:12px; text-decoration:none;
+    font-size:12.5px; font-weight:700; display:inline-flex; align-items:center; gap:6px;
+  }
+  .order-btn:hover{background:#1EBE5A;}
 
-        /* CONTAINER DA FOTO DA MENINA (ROSTO DA MARCA) */
-        .hero-avatar-container {
-            width: 320px;
-            height: 320px;
-            background: linear-gradient(135deg, #db2777, #764ba2);
-            border-radius: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 120px;
-            color: white;
-            box-shadow: 0 30px 60px rgba(118, 75, 162, 0.2);
-            overflow: hidden;
-            position: relative;
-        }
+  /* ===================== COMO FUNCIONA ===================== */
+  .steps{background:var(--paper-alt);}
+  .steps-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:40px; position:relative;}
+  .step{text-align:center; position:relative;}
+  .step-num{
+    width:64px; height:64px; border-radius:50%; border:2px dashed var(--plum);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 18px;
+    font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--plum); background:var(--paper);
+  }
+  .step h3{font-size:18px; margin-bottom:8px;}
+  .step p{font-size:13.5px; color:var(--ink-soft); max-width:230px; margin:0 auto;}
+  @media (min-width:901px){
+    .step:not(:last-child)::after{
+      content:''; position:absolute; top:32px; left:calc(50% + 60px); width:calc(100% - 60px);
+      border-top:2px dashed rgba(108,74,134,.3);
+    }
+  }
 
-        .hero-avatar-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+  /* ===================== SOBRE ===================== */
+  .about{
+    max-width:1140px; margin:0 auto; display:grid; grid-template-columns:.85fr 1.15fr; gap:60px; align-items:center;
+  }
+  .about-photo{
+    aspect-ratio:1/1.05; border-radius:38% 62% 60% 40% / 45% 40% 60% 55%;
+    background:linear-gradient(135deg,#E9A9C1,#6C4A86);
+    display:flex; align-items:center; justify-content:center; color:#fff; position:relative; overflow:hidden;
+  }
+  .about-photo svg{width:56px; height:56px; opacity:.85;}
+  .about-photo small{
+    position:absolute; bottom:24px; font-family:var(--font-hand); font-size:15px; color:rgba(255,255,255,.9);
+  }
+  .about-text p{color:var(--ink-soft); font-size:15.5px; line-height:1.75; margin-bottom:16px;}
+  .about-text p:first-of-type{font-family:var(--font-display); font-style:italic; font-size:19px; color:var(--ink);}
 
-        /* SEÇÃO 2: CATÁLOGO COMPLETO POR ABAS/CATEGORIAS */
-        .catalog-section {
-            padding: 100px 8%;
-            max-width: 1300px;
-            margin: 0 auto;
-            text-align: center;
-        }
+  /* ===================== CONTATO ===================== */
+  .contact{background:var(--paper-alt);}
+  .contact-card{
+    max-width:560px; margin:0 auto; background:var(--card); border-radius:var(--radius-lg);
+    padding:48px 40px; text-align:center; box-shadow:var(--shadow); border:1px solid var(--line);
+  }
+  .contact-card h2{margin-bottom:10px;}
+  .contact-card > p{color:var(--ink-soft); font-size:14.5px; margin-bottom:30px;}
+  .contact-actions{display:flex; flex-direction:column; gap:14px;}
+  .contact-actions .btn{width:100%; justify-content:center; padding:16px;}
+  .contact-meta{
+    margin-top:26px; padding-top:22px; border-top:1px solid var(--line);
+    font-size:13px; color:var(--ink-soft); display:flex; flex-direction:column; gap:6px;
+  }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            margin-bottom: 50px;
-            color: #1e1b4b;
-        }
+  /* ===================== FOOTER ===================== */
+  footer{background:var(--ink); color:#C9C2B8; padding:50px 8% 30px; text-align:center;}
+  .footer-logo{font-family:var(--font-display); font-size:21px; color:#fff; margin-bottom:8px;}
+  .footer-tag{font-family:var(--font-hand); font-size:16px; color:var(--gold); margin-bottom:22px;}
+  .footer-social{display:flex; justify-content:center; gap:16px; margin-bottom:26px;}
+  .footer-social a{
+    width:38px; height:38px; border-radius:50%; border:1px solid rgba(255,255,255,.18);
+    display:flex; align-items:center; justify-content:center; transition:.2s;
+  }
+  .footer-social a:hover{background:var(--rose); border-color:var(--rose);}
+  .footer-social svg{width:17px; height:17px; fill:#fff;}
+  footer .copy{font-size:11.5px; color:#8b8478; border-top:1px solid rgba(255,255,255,.08); padding-top:20px;}
 
-        .catalog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 40px;
-            text-align: left;
-        }
+  /* ===================== FLOAT WHATSAPP ===================== */
+  .float-wa{
+    position:fixed; bottom:24px; right:24px; width:58px; height:58px; border-radius:50%;
+    background:#25D366; display:flex; align-items:center; justify-content:center; z-index:900;
+    box-shadow:0 12px 26px rgba(37,211,102,.4); text-decoration:none;
+  }
+  .float-wa svg{width:28px; height:28px; fill:#fff;}
+  .float-wa::before{
+    content:''; position:absolute; inset:0; border-radius:50%; border:2px solid #25D366;
+    animation:pulse-ring 2.2s ease-out infinite;
+  }
+  @keyframes pulse-ring{0%{transform:scale(1); opacity:.6;} 100%{transform:scale(1.6); opacity:0;}}
 
-        .product-card {
-            background: white;
-            border-radius: 28px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            border: 1px solid rgba(0,0,0,0.03);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
+  /* ===================== REVEAL ===================== */
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
 
-        .product-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 26px 45px rgba(118, 75, 162, 0.08);
-        }
-
-        .product-image {
-            height: 240px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 54px;
-        }
-
-        .p-topo { background: linear-gradient(135deg, #fed7aa 0%, #fbcfe8 100%); }
-        .p-caixinha { background: linear-gradient(135deg, #fef08a 0%, #fbcfe8 100%); }
-        .p-balao { background: linear-gradient(135deg, #bfdbfe 0%, #fbcfe8 100%); }
-        .p-kit { background: linear-gradient(135deg, #fbcfe8 0%, #c7d2fe 100%); }
-
-        .product-info {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .product-tag {
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            color: #db2777;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
-
-        .product-name {
-            font-size: 18px;
-            font-weight: 700;
-            color: #1e1b4b;
-            margin-bottom: 10px;
-        }
-
-        .product-desc {
-            font-size: 13px;
-            color: #6b7280;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .product-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding-top: 18px;
-            border-top: 1px solid #f3f4f6;
-        }
-
-        .product-price {
-            font-size: 15px;
-            font-weight: 800;
-            color: #1e1b4b;
-        }
-
-        .order-btn {
-            background: #10b981;
-            color: white;
-            padding: 10px 16px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* SEÇÃO 3: SOBRE NÓS */
-        .about-section {
-            background: #f3e8ff;
-            padding: 90px 8%;
-            text-align: center;
-            border-radius: 50px;
-            max-width: 1150px;
-            margin: 40px auto;
-        }
-
-        .about-content {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .about-content p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #4b5563;
-            margin-top: 20px;
-        }
-
-        /* SEÇÃO 4: CONTATO & LINK INFINITYPAY */
-        .contact-section {
-            padding: 100px 8%;
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-card {
-            background: white;
-            padding: 40px;
-            border-radius: 32px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
-            border: 1px solid #f3f4f6;
-        }
-
-        .btn-infinity-store {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: #000000;
-            color: white;
-            padding: 16px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-weight: 700;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        /* RODAPÉ */
-        footer {
-            background: #111827;
-            color: #9ca3af;
-            padding: 40px 8%;
-            text-align: center;
-            font-size: 12px;
-            margin-top: 80px;
-        }
-
-        .msp-footer {
-            font-weight: 700;
-            color: #a78bfa;
-            margin-top: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* RESPONSIVIDADE */
-        @media (max-width: 900px) {
-            .hero-section { flex-direction: column; text-align: center; padding: 60px 5%; }
-            .hero-content { text-align: center; }
-            .hero-avatar-container { width: 240px; height: 240px; font-size: 80px; }
-            nav { display: none; } /* Esconde o menu extenso no celular para simplificar */
-        }
-    </style>
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width:900px){
+    nav.main-nav, .header-actions .btn-nav-wa{display:none;}
+    .hamburger{display:flex;}
+    .mobile-panel, .scrim{display:block;}
+    .hero{grid-template-columns:1fr; padding-top:150px; text-align:center;}
+    .hero-copy p{margin-left:auto; margin-right:auto;}
+    .hero-ctas{justify-content:center;}
+    .photo-stack{height:320px; max-width:340px; margin:0 auto;}
+    .pc-1{left:0;} .pc-2{left:110px;} .pc-3{left:20px;}
+    .steps-grid{grid-template-columns:1fr; gap:50px;}
+    .about{grid-template-columns:1fr;}
+    .about-photo{max-width:280px; margin:0 auto;}
+    section{padding:80px 6%;}
+  }
+</style>
 </head>
 <body>
 
-    <!-- NAVBAR / MENU SUPERIOR -->
-    <header>
-        <a href="#inicio" class="logo">Carolas Papelaria</a>
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#catalogo">Catálogo</a>
-            <a href="#sobre">Sobre Nós</a>
-            <a href="#contato">Contato</a>
-        </nav>
-        <a href="https://wa.me" target="_blank" class="nav-whatsapp-btn">
-            <i class="ph ph-whatsapp-logo"></i> Fazer Pedido
-        </a>
-    </header>
+<!-- ===================== HEADER ===================== -->
+<header id="siteHeader">
+  <a href="#inicio" class="logo">Carola<span>s</span> Papelaria</a>
 
-    <!-- ABA 1: INÍCIO -->
-    <section id="inicio" class="hero-section">
-        <div class="hero-content">
-            <h1>Mimos Afetivos & Scrap Festa de Luxo</h1>
+  <nav class="main-nav">
+    <a href="#inicio">Início</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <div class="header-actions">
+    <a href="#" data-wa="Olá! Vim do site da Carolas Papelaria e quero fazer um pedido 💌" class="btn-nav-wa">
+      <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.6.8 5 2.1 7L3 29l6.6-2.3c1.9 1 4.1 1.6 6.4 1.6 7 0 12.7-5.6 12.7-12.6C28.7 8.6 23 3 16 3zm0 22.9c-2 0-4-.5-5.6-1.6l-.4-.2-4 1.4 1.3-3.9-.3-.4a10.4 10.4 0 0 1-1.7-5.6c0-5.8 4.7-10.5 10.6-10.5S26.6 9.8 26.6 15.6 21.9 25.9 16 25.9zm5.8-7.9c-.3-.2-1.9-.9-2.1-1-.3-.1-.5-.2-.7.2s-.9 1-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.4 3.6 5.7 5 .8.3 1.4.5 1.9.7.8.2 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg>
+      Pedir no WhatsApp
+    </a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menu" aria-expanded="false">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<div class="mobile-panel" id="mobilePanel">
+  <button class="mobile-close" id="mobileClose" aria-label="Fechar menu">×</button>
+  <a href="#inicio">Início</a>
+  <a href="#catalogo">Catálogo</a>
+  <a href="#como-funciona">Como funciona</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#contato">Contato</a>
+  <a href="#" data-wa="Olá! Vim do site da Carolas Papelaria e quero fazer um pedido 💌" style="color:#1EBE5A;">Pedir no WhatsApp →</a>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section id="inicio" class="hero">
+  <div class="hero-copy reveal">
+    <span class="eyebrow">feito à mão, com carinho ✂️</span>
+    <h1>Mimos que viram <em>lembrança</em> de festa</h1>
+    <p>Topos de bolo, caixinhas, balões e kits personalizados sob medida para a sua data especial. Cada detalhe pensado à mão, do jeitinho que você imaginou.</p>
+    <div class="hero-ctas">
+      <a href="#" data-wa="Olá! Vim do site da Carolas Papelaria e quero fazer um pedido 💌" class="btn btn-primary">
+        <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.6.8 5 2.1 7L3 29l6.6-2.3c1.9 1 4.1 1.6 6.4 1.6 7 0 12.7-5.6 12.7-12.6C28.7 8.6 23 3 16 3z"/></svg>
+        Fazer pedido no WhatsApp
+      </a>
+      <a href="#catalogo" class="btn btn-outline">Ver catálogo</a>
+    </div>
+  </div>
+
+  <div class="photo-stack reveal">
+    <span class="hero-sticker st-1">🎀</span>
+    <span class="hero-sticker st-2">⭐</span>
+    <figure class="photo-card pc-1">
+      <div class="tape"></div>
+      <div class="frame">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+        <small>sua foto aqui</small>
+      </div>
+      <figcaption>topo personalizado</figcaption>
+    </figure>
+    <figure class="photo-card pc-2">
+      <div class="tape"></div>
+      <div class="frame">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+        <small>sua foto aqui</small>
+      </div>
+      <figcaption>caixinha de festa</figcaption>
+    </figure>
+    <figure class="photo-card pc-3">
+      <div class="tape"></div>
+      <div class="frame">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+        <small>sua foto aqui</small>
+      </div>
+      <figcaption>kit completo</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== RIBBON ===================== -->
+<div class="ribbon">
+  <div class="ribbon-track">
+    <span>✂️ feito à mão</span><span>🎀 personalização total</span><span>📦 envio para todo o Brasil</span><span>💌 atendimento próximo</span>
+    <span>✂️ feito à mão</span><span>🎀 personalização total</span><span>📦 envio para todo o Brasil</span><span>💌 atendimento próximo</span>
+  </div>
+</div>
+
+<!-- ===================== CATÁLOGO ===================== -->
+<section id="catalogo" class="catalog">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">o que a gente faz</span>
+      <h2>Catálogo</h2>
+      <p>Alguns dos mimos mais pedidos. Todos podem ser personalizados com cores, nome e tema da sua festa.</p>
+    </div>
+
+    <div class="catalog-grid">
+      <div class="product-card reveal">
+        <div class="product-photo p-topo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v6M9 6l3-3 3 3"/><rect x="4" y="14" width="16" height="7" rx="2"/><path d="M4 14c2-3 14-3 16 0"/></svg>
+        </div>
+        <div class="product-info">
+          <span class="product-tag">bolo & mesa</span>
+          <h3 class="product-name">Topo de bolo personalizado</h3>
+          <p class="product-desc">Nome, idade e tema do jeitinho que você quiser, em papel especial e acabamento resistente.</p>
+          <div class="product-footer">
+            <div class="product-price">a partir de R$ 24,90<small>preço de exemplo — edite no código</small></div>
+            <a href="#" data-wa="Olá! Quero saber mais sobre o Topo de Bolo Personalizado 🎂" class="order-btn">Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo p-caixinha">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+        </div>
+        <div class="product-info">
+          <span class="product-tag">lembrancinhas</span>
+          <h3 class="product-name">Caixinha personalizada</h3>
+          <p class="product-desc">Para doces, mimos ou souvenirs — combine cor, tag e recheio conforme o tema da festa.</p>
+          <div class="product-footer">
+            <div class="product-price">a partir de R$ 3,90<small>preço de exemplo — edite no código</small></div>
+            <a href="#" data-wa="Olá! Quero saber mais sobre a Caixinha Personalizada 🎁" class="order-btn">Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo p-balao">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="9" rx="6" ry="7"/><path d="M12 16l-1.5 3h3z"/><path d="M12 19v3"/></svg>
+        </div>
+        <div class="product-info">
+          <span class="product-tag">decoração</span>
+          <h3 class="product-name">Balão personalizado</h3>
+          <p class="product-desc">Bexigas temáticas com nome, número ou frase, prontas para compor o cenário da festa.</p>
+          <div class="product-footer">
+            <div class="product-price">a partir de R$ 8,90<small>preço de exemplo — edite no código</small></div>
+            <a href="#" data-wa="Olá! Quero saber mais sobre o Balão Personalizado 🎈" class="order-btn">Pedir</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo p-kit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 11h18"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </div>
+        <div class="product-info">
+          <span class="product-tag">tudo em um</span>
+          <h3 class="product-name">Kit festa completo</h3>
+          <p class="product-desc">Topo, caixinhas, balões e adesivos combinando entre si — só escolher o tema.</p>
+          <div class="product-footer">
+            <div class="product-price">a partir de R$ 79,90<small>preço de exemplo — edite no código</small></div>
+            <a href="#" data-wa="Olá! Quero saber mais sobre o Kit Festa Completo 🎉" class="order-btn">Pedir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMO FUNCIONA ===================== -->
+<section id="como-funciona" class="steps">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">super simples</span>
+      <h2>Como funciona</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Escolha e personalize</h3>
+        <p>Veja o catálogo e me conte cores, tema e data da festa.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>Confirme no WhatsApp</h3>
+        <p>Alinhamos os detalhes, prazo e forma de pagamento por lá.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>Receba com carinho</h3>
+        <p>Envio para todo o Brasil ou combine a retirada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOBRE ===================== -->
+<section id="sobre">
+  <div class="about">
+    <div class="about-photo reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-9.5-9C.5 8 2.5 4 6.5 4c2 0 3.5 1.2 4.5 2.5C12 5.2 13.5 4 15.5 4 19.5 4 21.5 8 21.5 12c-2.5 4.5-9.5 9-9.5 9z"/></svg>
+      <small>foto da Carola aqui</small>
+    </div>
+    <div class="about-text reveal">
+      <span class="eyebrow">quem faz</span>
+      <h2>Sobre a Carolas Papelaria</h2>
+      <p>Cada mimo sai da minha mesa de trabalho pensado especialmente pra sua festa — sem molde pronto, sem produção em massa.</p>
+      <p>[Escreva aqui sua história: desde quando você faz papelaria personalizada, o que te inspira e o que torna seu trabalho único. Duas ou três frases já contam bastante.]</p>
+      <p>Se tem uma ideia na cabeça, uma referência do Pinterest ou só um tema em mente, me chama que a gente monta junto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTATO ===================== -->
+<section id="contato" class="contact">
+  <div class="contact-card reveal">
+    <span class="eyebrow">vamos combinar sua festa?</span>
+    <h2>Fale comigo</h2>
+    <p>Respondo rapidinho por lá — me conta a data, o tema e o que você precisa.</p>
+    <div class="contact-actions">
+      <a href="#" data-wa="Olá! Vim do site da Carolas Papelaria e quero fazer um pedido 💌" class="btn btn-primary">
+        <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.6.8 5 2.1 7L3 29l6.6-2.3c1.9 1 4.1 1.6 6.4 1.6 7 0 12.7-5.6 12.7-12.6C28.7 8.6 23 3 16 3z"/></svg>
+        Chamar no WhatsApp
+      </a>
+      <a href="https://instagram.com/SEU_USUARIO" target="_blank" rel="noopener" class="btn btn-outline">
+        Ver no Instagram
+      </a>
+    </div>
+    <div class="contact-meta">
+      <span>📍 Atendimento sob encomenda — todo o Brasil</span>
+      <span>🕒 Segunda a sábado, das 9h às 18h</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="footer-logo">Carolas Papelaria</div>
+  <div class="footer-tag">mimos afetivos & scrap festa ✂️</div>
+  <div class="footer-social">
+    <a href="#" data-wa="Olá! Vim do site da Carolas Papelaria 💌" aria-label="WhatsApp">
+      <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.6.8 5 2.1 7L3 29l6.6-2.3c1.9 1 4.1 1.6 6.4 1.6 7 0 12.7-5.6 12.7-12.6C28.7 8.6 23 3 16 3z"/></svg>
+    </a>
+    <a href="https://instagram.com/SEU_USUARIO" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 2.4.32 3.3 1.2.9.9 1.15 2.1 1.2 3.3.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.32 2.4-1.2 3.3-.9.9-2.1 1.15-3.3 1.2-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-2.4-.32-3.3-1.2-.9-.9-1.15-2.1-1.2-3.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.32-2.4 1.2-3.3.9-.9 2.1-1.15 3.3-1.2C7.8 2.2 8.2 2.2 12 2.2zm0 3.3a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm0 10.7a4.2 4.2 0 1 1 0-8.4 4.2 4.2 0 0 1 0 8.4zm6.7-10.9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg>
+    </a>
+  </div>
+  <div class="copy">© <span id="year"></span> Carolas Papelaria Personalizada. Todos os direitos reservados.</div>
+</footer>
+
+<a href="#" data-wa="Olá! Vim do site da Carolas Papelaria e quero fazer um pedido 💌" class="float-wa" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.6.8 5 2.1 7L3 29l6.6-2.3c1.9 1 4.1 1.6 6.4 1.6 7 0 12.7-5.6 12.7-12.6C28.7 8.6 23 3 16 3z"/></svg>
+</a>
+
+<script>
+  /* ===========================================================
+     ⚙️ ÚNICO LUGAR QUE PRECISA EDITAR PARA O WHATSAPP FUNCIONAR:
+     Troque pelo número real, com DDI 55 + DDD + número, só dígitos.
+     Exemplo: "5511987654321"
+  =========================================================== */
+  const PHONE = "5511959330766"; // TODO: coloque o número real aqui
+
+  document.querySelectorAll('[data-wa]').forEach(el => {
+    const msg = el.getAttribute('data-wa');
+    el.href = `https://wa.me/${PHONE}?text=${encodeURIComponent(msg)}`;
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // header shrink on scroll
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  // mobile menu
+  const hamburger = document.getElementById('hamburgerBtn');
+  const panel = document.getElementById('mobilePanel');
+  const scrim = document.getElementById('scrim');
+  const closeBtn = document.getElementById('mobileClose');
+  function openMenu(){ panel.classList.add('open'); scrim.classList.add('open'); hamburger.setAttribute('aria-expanded','true'); }
+  function closeMenu(){ panel.classList.remove('open'); scrim.classList.remove('open'); hamburger.setAttribute('aria-expanded','false'); }
+  hamburger.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  scrim.addEventListener('click', closeMenu);
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  // scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
