@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carolas Papelaria Personalizada | Links Oficiais</title>
-    <!-- Fontes Elegantes e Ícones -->
+    <title>Carolas Papelaria Personalizada | Catálogo Oficial</title>
+    <!-- Fontes Premium e Ícones -->
     <link href="https://googleapis.com" rel="stylesheet">
     <script src="https://unpkg.com"></script>
     
@@ -16,215 +16,302 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
+        :root {
+            --primary: #8b5cf6;
+            --primary-light: #ddd6fe;
+            --bg-gradient: linear-gradient(135deg, #fff5f5 0%, #fef08a 50%, #e0e7ff 100%);
+            --text-main: #1e1b4b;
+            --text-muted: #4b5563;
+        }
+
         body {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* Degradê pastel premium que combina perfeitamente com nicho de papelaria/artesanato */
-            background: linear-gradient(135deg, #fef1f2 0%, #fae8ff 50%, #e0e7ff 100%);
-            padding: 24px;
-            color: #2d3748;
+            background: #fafafa;
+            color: var(--text-main);
+            overflow-x: hidden;
         }
 
-        .container {
+        /* Topo / Navbar */
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            position: fixed;
+            top: 0;
             width: 100%;
-            max-width: 440px;
-            text-align: center;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            padding: 40px 28px 32px 28px;
-            border-radius: 32px;
-            box-shadow: 0 24px 48px rgba(120, 110, 140, 0.1);
-            position: relative;
-        }
-
-        /* Avatar circular delicado simulando a logo ou foto de perfil */
-        .avatar-container {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #ec4899, #8b5cf6);
-            border-radius: 50%;
-            margin: 0 auto 20px auto;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 15px 5%;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            font-size: 38px;
-            color: white;
-            box-shadow: 0 12px 24px rgba(236, 72, 153, 0.2);
         }
 
-        .badge {
-            display: inline-flex;
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 22px;
+            color: #6d28d9;
+        }
+
+        .contact-top-btn {
+            background: #10b981;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            display: flex;
             align-items: center;
             gap: 6px;
-            background: rgba(139, 92, 246, 0.1);
-            color: #6d28d9;
-            padding: 6px 14px;
-            border-radius: 100px;
-            font-size: 12px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
+            transition: 0.3s;
         }
 
-        .badge .dot {
-            width: 6px;
-            height: 6px;
-            background-color: #8b5cf6;
-            border-radius: 50%;
+        .contact-top-btn:hover {
+            background: #059669;
+            transform: translateY(-1px);
+        }
+
+        /* Banner Principal / Hero Section */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(135deg, #fef1f2 0%, #fae8ff 100%);
+            padding: 80px 5% 60px 5%;
+            text-align: center;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            color: #1e1b4b;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+        }
+
+        /* Seção do Catálogo */
+        .catalog-container {
+            padding: 60px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            position: relative;
             display: inline-block;
         }
 
-        h1 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 26px;
-            font-weight: 800;
-            color: #1e1b4b;
-            line-height: 1.2;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #8b5cf6;
+            border-radius: 2px;
         }
 
-        .subtitle {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: #6b7280;
-            font-size: 16px;
-            margin-bottom: 24px;
+        /* Grade de Produtos */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
         }
 
-        .description {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #4b5563;
-            margin-bottom: 32px;
-        }
-
-        .action-buttons {
+        /* Cartão do Produto */
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
-            gap: 16px;
         }
 
-        .btn {
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.07);
+        }
+
+        /* Placeholder visual premium para substituir fotos provisórias */
+        .product-image-placeholder {
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+            position: relative;
+        }
+
+        .p1 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
+        .p2 { background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); }
+        .p3 { background: linear-gradient(135deg, #ffd1ff 0%, #f107a3 100%); }
+        .p4 { background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%); }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-category {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #8b5cf6;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e1b4b;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .product-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+
+        .product-footer {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 18px 24px;
-            border-radius: 18px;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid transparent;
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid #f3f4f6;
         }
 
-        /* Botão InfinityPay elegante com transição suave */
-        .btn-infinity {
-            background: #0f172a;
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+        .product-price {
+            font-size: 18px;
+            font-weight: 800;
+            color: #1e1b4b;
         }
 
-        .btn-infinity:hover {
-            background: #1e293b;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 20px rgba(15, 23, 42, 0.25);
-        }
-
-        /* Botão WhatsApp em tom de verde harmônico */
-        .btn-whatsapp {
+        .order-btn {
             background: #10b981;
             color: white;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
-        }
-
-        .btn-whatsapp:hover {
-            background: #059669;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 20px rgba(16, 185, 129, 0.25);
-        }
-
-        .btn-content {
-            display: flex;
+            padding: 10px 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
             align-items: center;
-            gap: 12px;
+            gap: 6px;
+            transition: 0.2s;
         }
 
-        .btn-content i {
-            font-size: 22px;
+        .order-btn:hover {
+            background: #059669;
         }
 
-        .arrow-icon {
-            font-size: 14px;
-            opacity: 0.6;
-            transition: transform 0.2s ease;
-        }
-
-        .btn:hover .arrow-icon {
-            transform: translateX(4px);
-        }
-
+        /* Rodapé técnico MSP */
         footer {
-            margin-top: 32px;
-            font-size: 10px;
+            background: #111827;
             color: #9ca3af;
+            padding: 40px 5%;
+            text-align: center;
+            font-size: 12px;
+            margin-top: 60px;
+        }
+
+        .msp-tag {
             font-weight: 700;
-            text-transform: uppercase;
             letter-spacing: 1px;
+            color: #a78bfa;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 600px) {
+            .hero h2 { font-size: 28px; }
+            .products-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="card">
-            <!-- Ícone flutuante simulando design/criação -->
-            <div class="avatar-container">
-                <i class="ph ph-sparkles"></i>
-            </div>
+    <!-- Topo -->
+    <header>
+        <div class="logo">Carolas Papelaria</div>
+        <a href="https://wa.me" target="_blank" class="contact-top-btn">
+            <i class="ph ph-whatsapp-logo"></i> Chamar no WhatsApp
+        </a>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="hero">
+        <h2>Seu dia a dia mais criativo e personalizado</h2>
+        <p>Explore nosso catálogo de mimos exclusivos. Cada detalhe é produzido artesanalmente para transformar seus momentos de organização e estudo.</p>
+    </section>
+
+    <!-- Área de Produtos -->
+    <main class="catalog-container">
+        <h3 class="section-title">Nossos Destaques</h3>
+        
+        <div class="products-grid">
             
-            <div class="badge">
-                <span class="dot"></span>Loja Oficial Ativa
-            </div>
-            
-            <h1>Carolas Papelaria</h1>
-            <div class="subtitle">Personalizada & Criativa</div>
-            
-            <p class="description">Escolha abaixo o canal ideal para conferir nosso catálogo completo, realizar seus pagamentos ou fazer o seu pedido diretamente com nossa equipe.</p>
-            
-            <div class="action-buttons">
-                <!-- LINK INFINITYPAY (Substitua o # pelo endereço real quando tiver) -->
-                <a href="#" target="_blank" class="btn btn-infinity">
-                    <div class="btn-content">
-                        <i class="ph ph-shopping-bag-open"></i>
-                        <span>Ver Catálogo e Pagar Online</span>
+            <!-- PRODUTO 1 -->
+            <div class="product-card">
+                <div class="product-image-placeholder p1">
+                    <i class="ph ph-notebook"></i>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Agendas & Cadernos</div>
+                    <h4 class="product-name">Agenda Planner 2026 Premium</h4>
+                    <p class="product-desc">Planejador anual completo com capa dura laminada, hot stamping gold, divisórias mensais e folhas de 90g.</p>
+                    <div class="product-footer">
+                        <span class="product-price">R$ 89,90</span>
+                        <a href="https://wa.me?text=Olá!%20Gostaria%20de%20encomendar%20o%20Planner%202026" target="_blank" class="order-btn">
+                            <i class="ph ph-whatsapp-logo"></i> Pedir
+                        </a>
                     </div>
-                    <i class="ph ph-caret-right arrow-icon"></i>
-                </a>
-
-                <!-- LINK WHATSAPP (Substitua o # pelo endereço real wa.me quando tiver) -->
-                <a href="#" target="_blank" class="btn btn-whatsapp">
-                    <div class="btn-content">
-                        <i class="ph ph-whatsapp-logo"></i>
-                        <span>Fazer Pedido via WhatsApp</span>
-                    </div>
-                    <i class="ph ph-caret-right arrow-icon"></i>
-                </a>
+                </div>
             </div>
-        </div>
 
-        <footer>
-            Infraestrutura Protegida por Cloud MSP
-        </footer>
-    </div>
+            <!-- PRODUTO 2 -->
+            <div class="product-card">
+                <div class="product-image-placeholder p2">
+                    <i class="ph ph-coffee"></i>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Presentes</div>
+                    <h4 class="product-name">Caneca Cerâmica Personalizada</h4>
+                    <p class="product-desc">Caneca de cerâmica de alta qualidade com arte exclusiva e aplicação de nome em lettering dourado.</p>
+                    <div class="product-footer">
+                        <span class="product-price">R$ 45,00</span>
+                        <a href="https://wa.me?text=Olá!%20Gostaria%20de%20encomendar%20a%20Caneca%20Personalizada" target="_blank" class="order-btn">
+                            <i class="ph ph-whatsapp-logo"></i> Pedir
+                        </a>
+                    </div>
+                </div>
+            </div>
 
-</body>
-</html>
+            <!-- PRODUTO 3 -->
+            <div class="product-card">
+                <div class="product-image-placeholder p3">
