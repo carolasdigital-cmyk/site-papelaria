@@ -230,7 +230,7 @@
 
   /* ===================== COMO FUNCIONA ===================== */
   .steps{background:var(--paper-alt);}
-  .steps-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:40px; position:relative;}
+  .steps-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:32px; position:relative;}
   .step{text-align:center; position:relative;}
   .step-num{
     width:64px; height:64px; border-radius:50%; border:2px dashed var(--plum);
@@ -239,7 +239,10 @@
   }
   .step h3{font-size:18px; margin-bottom:8px;}
   .step p{font-size:13.5px; color:var(--ink-soft); max-width:230px; margin:0 auto;}
-  @media (min-width:901px){
+  @media (max-width:1100px) and (min-width:901px){
+    .steps-grid{grid-template-columns:repeat(2,1fr); row-gap:56px;}
+  }
+  @media (min-width:1101px){
     .step:not(:last-child)::after{
       content:''; position:absolute; top:32px; left:calc(50% + 60px); width:calc(100% - 60px);
       border-top:2px dashed rgba(108,74,134,.3);
@@ -270,6 +273,18 @@
   }
   .contact-card h2{margin-bottom:10px;}
   .contact-card > p{color:var(--ink-soft); font-size:14.5px; margin-bottom:30px;}
+  .mini-steps{
+    text-align:left; margin-bottom:30px; padding:18px 20px; background:var(--paper);
+    border-radius:var(--radius-md); border:1px solid var(--line);
+  }
+  .mini-steps li{
+    list-style:none; display:flex; align-items:baseline; gap:10px; font-size:13.5px;
+    color:var(--ink-soft); padding:7px 0;
+  }
+  .mini-steps li:not(:last-child){border-bottom:1px dashed var(--line);}
+  .mini-steps li span{
+    font-family:var(--font-display); font-weight:700; font-size:13px; color:var(--plum); flex-shrink:0;
+  }
   .contact-actions{display:flex; flex-direction:column; gap:14px;}
   .contact-actions .btn{width:100%; justify-content:center; padding:16px;}
   .contact-meta{
@@ -333,7 +348,6 @@
   <nav class="main-nav">
     <a href="#inicio">Início</a>
     <a href="#catalogo">Catálogo</a>
-    <a href="#como-funciona">Como funciona</a>
     <a href="#sobre">Sobre</a>
     <a href="#contato">Contato</a>
   </nav>
@@ -354,7 +368,6 @@
   <button class="mobile-close" id="mobileClose" aria-label="Fechar menu">×</button>
   <a href="#inicio">Início</a>
   <a href="#catalogo">Catálogo</a>
-  <a href="#como-funciona">Como funciona</a>
   <a href="#sobre">Sobre</a>
   <a href="#contato">Contato</a>
   <a href="#" data-wa="Olá! Vim do site da Carolas Papelaria e quero fazer um pedido 💌" style="color:#1EBE5A;">Pedir no WhatsApp →</a>
@@ -544,31 +557,6 @@
     </div>
   </div>
 </section>
-<section id="como-funciona" class="steps">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">super simples</span>
-      <h2>Como funciona</h2>
-    </div>
-    <div class="steps-grid">
-      <div class="step reveal">
-        <div class="step-num">01</div>
-        <h3>Escolha e personalize</h3>
-        <p>Veja o catálogo e me conte cores, tema e data da festa.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">02</div>
-        <h3>Confirme no WhatsApp</h3>
-        <p>Alinhamos os detalhes, prazo e forma de pagamento por lá.</p>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">03</div>
-        <h3>Receba com carinho</h3>
-        <p>Envio para todo o Brasil ou combine a retirada.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ===================== SOBRE ===================== -->
 <section id="sobre">
@@ -593,6 +581,14 @@
     <span class="eyebrow">vamos combinar sua festa?</span>
     <h2>Fale comigo</h2>
     <p>Respondo rapidinho por lá — me conta a data, o tema e o que você precisa.</p>
+
+    <ul class="mini-steps">
+      <li><span>01</span> Escolha o modelo no catálogo</li>
+      <li><span>02</span> Me conta cores, nome e tema</li>
+      <li><span>03</span> Aprovo a arte com você antes de produzir</li>
+      <li><span>04</span> Envio ou combino a retirada</li>
+    </ul>
+
     <div class="contact-actions">
       <a href="#" data-wa="Olá! Vim do site da Carolas Papelaria e quero fazer um pedido 💌" class="btn btn-primary">
         <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.6.8 5 2.1 7L3 29l6.6-2.3c1.9 1 4.1 1.6 6.4 1.6 7 0 12.7-5.6 12.7-12.6C28.7 8.6 23 3 16 3z"/></svg>
@@ -634,7 +630,7 @@
      Troque pelo número real, com DDI 55 + DDD + número, só dígitos.
      Exemplo: "5511987654321"
   =========================================================== */
-  const PHONE = "5500000000000"; // TODO: coloque o número real aqui
+  const PHONE = "5511979672245"; // TODO: coloque o número real aqui
 
   document.querySelectorAll('[data-wa]').forEach(el => {
     const msg = el.getAttribute('data-wa');
