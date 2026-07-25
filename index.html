@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carolas Papelaria Personalizada | Loja Virtual</title>
+    <!-- Fonte Moderna e Ícones -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    <script src="https://unpkg.com"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: #2d3748;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px 30px;
+            border-radius: 24px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon-box {
+            width: 70px;
+            height: 70px;
+            background: #764ba2;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            margin: 0 auto 24px auto;
+            font-size: 32px;
+            box-shadow: 0 10px 20px rgba(118, 75, 162, 0.3);
+        }
+
+        h1 {
+            font-size: 26px; /* Ajustado para caber o nome maior sem quebrar o layout */
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #1a202c;
+            letter-spacing: -0.5px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 30px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e2e8f0;
+            margin-bottom: 24px;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 24px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-infinity {
+            background: #000000;
+            color: #ffffff;
+            border: 1px solid #000000;
+        }
+
+        .btn-infinity:hover {
+            background: #222222;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            border: 1px solid #25d366;
+        }
+
+        .btn-whatsapp:hover {
+            background: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 11px;
+            color: #a0aec0;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="icon-box">
+            <i class="ph ph-shopping-bag"></i>
+        </div>
+        
+        <div class="badge">Loja Oficial Ativa</div>
+        <h1>Carolas Papelaria Personalizada</h1>
+        
+        <p>Seja bem-vindo à nossa nova central de compras! Escolha abaixo como prefere fazer o seu pedido de forma rápida e segura.</p>
+        
+        <div class="divider"></div>
+        
+        <div class="action-buttons">
+            <!-- COLOQUE O LINK DA INFINITYPAY DO CLIENTE NO LUGAR DO # -->
+            <a href="#" target="_blank" class="btn btn-infinity">
+                <i class="ph ph-credit-card"></i> Ver Catálogo e Pagar On-line
+            </a>
+
+            <!-- COLOQUE O LINK DO WHATSAPP DO CLIENTE NO LUGAR DO # -->
+            <a href="#" target="_blank" class="btn btn-whatsapp">
+                <i class="ph ph-whatsapp-logo"></i> Fazer Pedido via WhatsApp
+            </a>
+        </div>
+
+        <footer>
+            Infraestrutura monitorada e protegida por Cloud MSP
+        </footer>
+    </div>
+
+</body>
+</html>
