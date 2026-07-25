@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carolas Papelaria Personalizada | Catálogo de Festas</title>
-    <!-- Fontes Premium e Ícones -->
+    <title>Carolas Papelaria Personalizada | Catálogo</title>
+    <!-- Fontes Elegantes e Ícones -->
     <link href="https://googleapis.com" rel="stylesheet">
     <script src="https://unpkg.com"></script>
     
@@ -17,294 +17,278 @@
         }
 
         body {
-            background: #fafafa;
-            color: #1e1b4b;
-            overflow-x: hidden;
-        }
-
-        /* Topo / Navbar */
-        header {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding: 15px 5%;
+            min-height: 100vh;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 22px;
-            color: #db2777; /* Rosa mais voltado para o nicho artesanal */
-        }
-
-        .contact-top-btn {
-            background: #10b981;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 100px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: 0.3s;
-        }
-
-        .contact-top-btn:hover {
-            background: #059669;
-            transform: translateY(-1px);
-        }
-
-        /* Banner Principal / Hero Section */
-        .hero {
-            margin-top: 70px;
-            background: linear-gradient(135deg, #fff1f2 0%, #fdf2f8 100%);
-            padding: 80px 5% 60px 5%;
-            text-align: center;
-            border-bottom-left-radius: 40px;
-            border-bottom-right-radius: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.01);
-        }
-
-        .hero h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 38px;
-            color: #1e1b4b;
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            color: #4b5563;
-            font-size: 16px;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
-            line-height: 1.6;
-        }
-
-        /* Seção do Catálogo */
-        .catalog-container {
-            padding: 60px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 24px;
-            font-weight: 800;
-            margin-bottom: 30px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: #db2777;
-            border-radius: 2px;
-        }
-
-        /* Grade de Produtos */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 30px;
-        }
-
-        /* Cartão do Produto */
-        .product-card {
-            background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.02);
-            border: 1px solid rgba(0,0,0,0.03);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 35px rgba(0,0,0,0.06);
-        }
-
-        /* Gradientes em tons Pastéis e Candy Colors de Festa */
-        .product-image-placeholder {
-            height: 220px;
-            display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 46px;
-            position: relative;
+            /* O degradê moderno que você gostou */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 24px;
+            color: #2d3748;
         }
 
-        .p-topo { background: linear-gradient(135deg, #fed7aa 0%, #fbcfe8 100%); }
-        .p-caixinha { background: linear-gradient(135deg, #fef08a 0%, #fbcfe8 100%); }
-        .p-kit { background: linear-gradient(135deg, #fbcfe8 0%, #c7d2fe 100%); }
-        .p-balao { background: linear-gradient(135deg, #bfdbfe 0%, #fbcfe8 100%); }
-        .p-etiqueta { background: linear-gradient(135deg, #bbf7d0 0%, #e0f2fe 100%); }
-        .p-laco { background: linear-gradient(135deg, #e9d5ff 0%, #fbcfe8 100%); }
-
-        .product-info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
+        .container {
+            width: 100%;
+            max-width: 460px;
+            text-align: center;
         }
 
-        .product-category {
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: #db2777;
-            letter-spacing: 1px;
-            margin-bottom: 6px;
+        .card {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 40px 24px 32px 24px;
+            border-radius: 32px;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
         }
 
-        .product-name {
-            font-size: 17px;
-            font-weight: 700;
-            color: #1e1b4b;
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
-
-        .product-desc {
-            font-size: 13px;
-            color: #4b5563;
-            line-height: 1.5;
-            margin-bottom: 15px;
-            flex-grow: 1;
-        }
-
-        .product-footer {
+        /* Espaço preparado para a foto da menina ou mascote no futuro. Por enquanto exibe um ícone lindo de festa */
+        .avatar-container {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #db2777, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px solid #f3f4f6;
-        }
-
-        .product-price {
-            font-size: 15px;
-            font-weight: 800;
-            color: #1e1b4b;
-        }
-
-        .order-btn {
-            background: #10b981;
+            justify-content: center;
+            font-size: 38px;
             color: white;
-            padding: 8px 14px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 600;
+            box-shadow: 0 12px 24px rgba(118, 75, 162, 0.3);
+            overflow: hidden;
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            transition: 0.2s;
-        }
-
-        .order-btn:hover {
-            background: #059669;
-        }
-
-        /* Rodapé */
-        footer {
-            background: #111827;
-            color: #9ca3af;
-            padding: 40px 5%;
-            text-align: center;
-            font-size: 12px;
-            margin-top: 60px;
-        }
-
-        .msp-tag {
+            background: rgba(118, 75, 162, 0.1);
+            color: #764ba2;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: 1px;
-            color: #f472b6;
-            margin-top: 10px;
+            margin-bottom: 16px;
             text-transform: uppercase;
+            letter-spacing: 0.8px;
         }
 
-        @media (max-width: 600px) {
-            .hero h2 { font-size: 28px; }
-            .products-grid { grid-template-columns: 1fr; }
+        .badge .dot {
+            width: 6px;
+            height: 6px;
+            background-color: #10b981;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1e1b4b;
+            line-height: 1.2;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #6b7280;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #4b5563;
+            margin-bottom: 28px;
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* Estilo de botão premium em lista (estilo catálogo de luxo) */
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-radius: 18px;
+            text-decoration: none;
+            color: #1e293b;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            border-color: #764ba2;
+            box-shadow: 0 10px 20px rgba(118, 75, 162, 0.12);
+        }
+
+        /* Botão de destaque para a Loja/Catálogo Geral na InfinityPay */
+        .btn-main-store {
+            background: #0f172a;
+            color: #ffffff;
+            border: 1px solid #0f172a;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+        }
+
+        .btn-main-store:hover {
+            background: #1e293b;
+            border-color: #1e293b;
+            box-shadow: 0 12px 20px rgba(15, 23, 42, 0.25);
+        }
+
+        .btn-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-align: left;
+        }
+
+        .btn-content i {
+            font-size: 24px;
+            color: #764ba2;
+        }
+
+        .btn-main-store .btn-content i {
+            color: #ffffff;
+        }
+
+        .btn-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .btn-title {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .btn-desc {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        .btn-main-store .btn-desc {
+            color: #94a3b8;
+        }
+
+        .arrow-icon {
+            font-size: 14px;
+            opacity: 0.4;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover .arrow-icon {
+            transform: translateX(4px);
+            opacity: 0.8;
+            color: #764ba2;
+        }
+
+        .btn-main-store:hover .arrow-icon {
+            color: #ffffff;
+        }
+
+        footer {
+            margin-top: 32px;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Topo -->
-    <header>
-        <div class="logo">Carolas Papelaria</div>
-        <a href="https://wa.me" target="_blank" class="contact-top-btn">
-            <i class="ph ph-whatsapp-logo"></i> Orçamento via WhatsApp
-        </a>
-    </header>
-
-    <!-- Banner Principal -->
-    <section class="hero">
-        <h2>Papelaria Personalizada & Scrap Festa</h2>
-        <p>A identidade visual da sua comemoração feita em recortes precisos de alta gramatura, camadas de papel especial e mimos exclusivos.</p>
-    </section>
-
-    <!-- Área de Produtos -->
-    <main class="catalog-container">
-        <h3 class="section-title">Nossos Mimos</h3>
-        
-        <div class="products-grid">
+    <div class="container">
+        <div class="card">
             
-            <!-- TOPO DE BOLO -->
-            <div class="product-card">
-                <div class="product-image-placeholder p-topo">
-                    <i class="ph ph-cake"></i>
-                </div>
-                <div class="product-info">
-                    <div class="product-category">Topo de Bolo</div>
-                    <h4 class="product-name">Topo de Bolo 3D em Camadas</h4>
-                    <p class="product-desc">Personalizado com nome e idade. Produzido com técnicas de scrap, papel lamicote metalizado e acabamento de alto padrão.</p>
-                    <div class="product-footer">
-                        <span class="product-price">Sob Consulta</span>
-                        <a href="https://wa.me?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20Topo%20de%20Bolo%20em%20Camadas" target="_blank" class="order-btn">
-                            <i class="ph ph-whatsapp-logo"></i> Pedir
-                        </a>
-                    </div>
-                </div>
+            <!-- Se você subir um arquivo chamado "menina.png" no seu GitHub, a foto dela aparece aqui automaticamente substituindo as estrelas -->
+            <div class="avatar-container">
+                <!-- <img src="menina.png" alt="Carolas Papelaria"> -->
+                <i class="ph ph-sparkles"></i>
             </div>
-
-            <!-- CAIXINHAS PERSONALIZADAS -->
-            <div class="product-card">
-                <div class="product-image-placeholder p-caixinha">
-                    <i class="ph ph-package"></i>
-                </div>
-                <div class="product-info">
-                    <div class="product-category">Lembrancinhas</div>
-                    <h4 class="product-name">Caixas Milk e Pirâmide de Luxo</h4>
-                    <p class="product-desc">Caixinhas temáticas para mesa de doces com apliques recortados em relevo, fechamento com laço estruturado e strass.</p>
-                    <div class="product-footer">
-                        <span class="product-price">Orçamento por Kit</span>
-                        <a href="https://wa.me?text=Olá!%20Quero%20saber%20mais%20sobre%20as%20Caixinhas%20Personalizadas%20de%20Luxo" target="_blank" class="order-btn">
-                            <i class="ph ph-whatsapp-logo"></i> Pedir
-                        </a>
-                    </div>
-                </div>
+            
+            <div class="badge">
+                <span class="dot"></span>Orçamentos Disponíveis
             </div>
+            
+            <h1>Carolas Papelaria</h1>
+            <div class="subtitle">Personalizada & Scrap Festa</div>
+            
+            <p class="description">Escolha o produto desejado para solicitar um orçamento exclusivo no WhatsApp ou acesse nosso catálogo de pagamentos online.</p>
+            
+            <div class="action-buttons">
+                
+                <!-- LINK DA LOJA INFINITYPAY (Troque o # pelo link real quando quiser) -->
+                <a href="#" target="_blank" class="btn btn-main-store">
+                    <div class="btn-content">
+                        <i class="ph ph-shopping-bag-open"></i>
+                        <div class="btn-text">
+                            <span class="btn-title">Catálogo Completo & Pagamentos</span>
+                            <span class="btn-desc">Acesse nossa loja virtual na InfinityPay</span>
+                        </div>
+                    </div>
+                    <i class="ph ph-caret-right arrow-icon"></i>
+                </a>
 
-            <!-- KIT COMPLETO PEGUE E MONTE -->
-            <div class="product-card">
+                <!-- PRODUTO: TOPO DE BOLO -->
+                <a href="https://wa.me de um orçamento para um Topo de Bolo em Camadas" target="_blank" class="btn">
+                    <div class="btn-content">
+                        <i class="ph ph-cake"></i>
+                        <div class="btn-text">
+                            <span class="btn-title">Topos de Bolo em Camadas</span>
+                            <span class="btn-desc">Modelos em 3D, lamicote e scrap de luxo</span>
+                        </div>
+                    </div>
+                    <i class="ph ph-caret-right arrow-icon"></i>
+                </a>
+
+                <!-- PRODUTO: CAIXINHAS PERSONALIZADAS -->
+                <a href="https://wa.me de ver modelos de Caixinhas Temáticas e Lembrancinhas" target="_blank" class="btn">
+                    <div class="btn-content">
+                        <i class="ph ph-package"></i>
+                        <div class="btn-text">
+                            <span class="btn-title">Caixinhas Milk & Lembrancinhas</span>
+                            <span class="btn-desc">Mimos estruturados com laços e apliques</span>
+                        </div>
+                    </div>
+                    <i class="ph ph-caret-right arrow-icon"></i>
+                </a>
+
+                <!-- PRODUTO: BALÕES -->
+                <a href="https://wa.me de encomendar um Balão Bubble Personalizado" target="_blank" class="btn">
+                    <div class="btn-content">
+                        <i class="ph ph-balloon"></i>
+                        <div class="btn-text">
+                            <span class="btn-title">Balões Bubble com Nome</span>
+                            <span class="btn-desc">Inflados com confete, vinil e adereços</span>
+                        </div>
+                    </div>
+                    <i class="ph ph-caret-right arrow-icon"></i>
+                </a>
+
+                <!-- PRODUTO: KIT PEGUE E MONTE -->
+                <a href="https://wa.me interesse no Kit Scrap Festa Completo" target="_blank" class="btn">
+                    <div class="btn-content">
+                        <i class="ph ph-gift"></i>
+                        <div class="btn-text">
+                            <span class="btn-title">Kits Completos para Festas</span>
