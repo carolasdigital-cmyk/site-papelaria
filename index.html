@@ -198,13 +198,15 @@
   .product-card:hover{transform:translateY(-6px); box-shadow:var(--shadow);}
   .product-photo{
     height:190px; position:relative; display:flex; align-items:center; justify-content:center;
-    color:#fff;
+    color:#fff; overflow:hidden;
   }
+  .product-photo img{width:100%; height:100%; object-fit:cover;}
   .product-photo svg{width:44px; height:44px; opacity:.9;}
   .product-photo::after{
     content:'clique para trocar pela foto real'; position:absolute; bottom:10px; font-family:var(--font-hand);
     font-size:13px; color:rgba(255,255,255,.85);
   }
+  .product-photo.has-photo::after{content:'';}
   .p-topo{background:linear-gradient(135deg,#E9A9C1,#C94569);}
   .p-caixinha{background:linear-gradient(135deg,#F3C567,#E8A33D);}
   .p-balao{background:linear-gradient(135deg,#9BC2E8,#6C4A86);}
@@ -219,14 +221,21 @@
   .product-desc{font-size:13.5px; color:var(--ink-soft); line-height:1.6; margin-bottom:18px; flex:1;}
   .product-footer{
     display:flex; align-items:center; justify-content:space-between; padding-top:16px; border-top:1px solid var(--line);
+    flex-wrap:wrap; gap:10px;
   }
   .product-price{font-size:14px; font-weight:800; color:var(--ink);}
   .product-price small{display:block; font-weight:500; color:var(--ink-soft); font-size:11px;}
+  .product-actions{display:flex; gap:8px; flex-wrap:wrap;}
   .order-btn{
     background:#25D366; color:#fff; padding:9px 15px; border-radius:12px; text-decoration:none;
     font-size:12.5px; font-weight:700; display:inline-flex; align-items:center; gap:6px;
   }
   .order-btn:hover{background:#1EBE5A;}
+  .pay-btn{
+    background:var(--plum); color:#fff; padding:9px 15px; border-radius:12px; text-decoration:none;
+    font-size:12.5px; font-weight:700; display:inline-flex; align-items:center; gap:6px; transition:.2s;
+  }
+  .pay-btn:hover{background:var(--plum-dark);}
 
   /* ===================== COMO FUNCIONA ===================== */
   .steps{background:var(--paper-alt);}
@@ -437,120 +446,324 @@
 
     <div class="catalog-grid">
       <div class="product-card reveal">
-        <div class="product-photo p-topo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v6M9 6l3-3 3 3"/><rect x="4" y="14" width="16" height="7" rx="2"/><path d="M4 14c2-3 14-3 16 0"/></svg>
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F6a90b6eb-959a-452d-8662-71de7b86b89c%3Fv%3D2026-07-21T14%3A55%3A15%2B00%3A00" alt="Topo de Bolo Flores com dourado" loading="lazy">
         </div>
         <div class="product-info">
           <span class="product-tag">bolo & mesa</span>
-          <h3 class="product-name">Topo de bolo personalizado</h3>
-          <p class="product-desc">Nome, idade e tema do jeitinho que você quiser, em papel especial e acabamento resistente.</p>
+          <h3 class="product-name">Topo de Bolo Flores com dourado</h3>
+          <p class="product-desc">Camadas em papel fotográfico, color plus colorido e lamicote, com acabamento brilhoso.</p>
           <div class="product-footer">
-            <div class="product-price">valor sob consulta</div>
-            <a href="#" data-wa="Olá! Quero saber mais sobre o Topo de Bolo Personalizado 🎂" class="order-btn">Pedir</a>
+            <div class="product-price">R$ 24,99</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Topo de Bolo Flores com dourado 🎂" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/mwy8414-topo-de-bolo-flores" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="product-card reveal">
-        <div class="product-photo p-caixinha">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F0fc36ef6-7ad4-434e-ae58-4fd4e02f23f8%3Fv%3D2026-07-20T18%3A48%3A25%2B00%3A00" alt="Promoção Topo de bolo" loading="lazy">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">bolo & mesa</span>
+          <h3 class="product-name">Promoção Topo de bolo</h3>
+          <p class="product-desc">Topo de bolo em oferta especial, ótimo custo-benefício para sua festa.</p>
+          <div class="product-footer">
+            <div class="product-price">R$ 14,99</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre a Promoção Topo de bolo 🎂" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/nts5069-promocao-topo-de-bolo" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F14d11603-b2c8-482c-a4d7-76169cd3f950%3Fv%3D2025-02-10T03%3A34%3A41%2B00%3A00" alt="Topo de Bolo Clássico" loading="lazy">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">bolo & mesa</span>
+          <h3 class="product-name">TOPO DE BOLO CLÁSSICO</h3>
+          <p class="product-desc">Vários temas disponíveis, em papel fotográfico 180g com acabamento brilhoso.</p>
+          <div class="product-footer">
+            <div class="product-price">R$ 18,99</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Topo de Bolo Clássico 🎂" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/cba6688-topo-de-bolo-simples" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F6a9b82ed-1427-43af-915f-94c001b6ae94%3Fv%3D20260316093708%26q%3Dthumbnail" alt="Topo de bolo Happy Birthday" loading="lazy">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">bolo & mesa</span>
+          <h3 class="product-name">Topo de bolo Happy Birthday</h3>
+          <p class="product-desc">Modelo temático de aniversário — consulte disponibilidade e prazo de reposição.</p>
+          <div class="product-footer">
+            <div class="product-price">R$ 12,00 <small>esgotado no momento</small></div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Vi o Topo de bolo Happy Birthday no site, ele está esgotado mas gostaria de saber sobre reposição 🎂" class="order-btn">Pedir</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F9fb93ed5-79ed-403c-9442-0c708f84a4a6%3Fv%3D2026-07-24T18%3A15%3A17%2B00%3A00" alt="Kit Mesversário" loading="lazy">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">mesversário</span>
+          <h3 class="product-name">KIT MESVERSÁRIO</h3>
+          <p class="product-desc">1 topo de bolo clássico, 10 toppers de docinhos e 2 displays de mesa.</p>
+          <div class="product-footer">
+            <div class="product-price">R$ 21,99</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Kit Mesversário 🎉" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/zfl8242-kit-mesversario" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F774faf92-ea7f-4686-882f-b4675fa4b8f3%3Fv%3D2026-03-15T12%3A55%3A08%2B00%3A00" alt="Kit Festa na Escola" loading="lazy">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">kit escola</span>
+          <h3 class="product-name">kit festa na escola</h3>
+          <p class="product-desc">Kit com 10 unidades: 1 maleta personalizada, 2 embalagens quadradas, 1 redonda e adesivo para suco.</p>
+          <div class="product-footer">
+            <div class="product-price">R$ 129,99</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Kit Festa na Escola 🎒" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/uwt4710-kit-festa-na-escola" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Fcfd1cf7f-40b8-4783-ad6e-4db5e0f9a287%3Fv%3D2026-04-17T19%3A24%3A32%2B00%3A00" alt="Kit 20 Copos Long Drinks" loading="lazy">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">copos personalizados</span>
+          <h3 class="product-name">Kit 20 copos long drinks</h3>
+          <p class="product-desc">20 copos personalizados no tema da sua festa, prontos para servir os convidados.</p>
+          <div class="product-footer">
+            <div class="product-price">R$ 114,00</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Kit 20 Copos Long Drinks 🥤" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/smh2318-kit-20-copos-long-drinks" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F5b066b98-7495-4eb0-8883-480741372245%3Fv%3D2026-04-17T19%3A07%3A11%2B00%3A00" alt="Kit 20 Copos Twister" loading="lazy">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">copos personalizados</span>
+          <h3 class="product-name">kit 20 copos Twister</h3>
+          <p class="product-desc">Copos twister personalizados, ideais para combinar com a decoração da festa.</p>
+          <div class="product-footer">
+            <div class="product-price">R$ 126,00</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Kit 20 Copos Twister 🥤" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/uwi6273-kit-25-copos-chantilly" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F624cce1e-6be6-4cbd-8215-0da68558786f%3Fv%3D2026-03-22T13%3A45%3A11%2B00%3A00" alt="Kit Mini Café Manhã" loading="lazy">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">kits</span>
+          <h3 class="product-name">KIT MINI CAFÉ MANHÃ</h3>
+          <p class="product-desc">Kit completo para um mini café da manhã surpresa, personalizado no seu tema.</p>
+          <div class="product-footer">
+            <div class="product-price">R$ 29,99</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Kit Mini Café Manhã ☕" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/wec6665-kit-mini-cafe-manha" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F21d9432f-de67-4be2-8af2-a01a9b133b14%3Fv%3D2026-01-08T13%3A35%3A27%2B00%3A00" alt="Kit 25 Tubetes Personalizados 3D" loading="lazy">
         </div>
         <div class="product-info">
           <span class="product-tag">lembrancinhas</span>
-          <h3 class="product-name">Caixinha personalizada</h3>
-          <p class="product-desc">Para doces, mimos ou lembrancinhas — combine cor, tag e recheio conforme o tema da festa.</p>
+          <h3 class="product-name">KIT 25 TUBETES PERSONALIZADOS 3D</h3>
+          <p class="product-desc">25 tubetes com apliques em 3D, duas camadas, em papel fotográfico brilhoso.</p>
           <div class="product-footer">
-            <div class="product-price">valor sob consulta</div>
-            <a href="#" data-wa="Olá! Quero saber mais sobre a Caixinha Personalizada 🎁" class="order-btn">Pedir</a>
+            <div class="product-price">R$ 49,00</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Kit 25 Tubetes Personalizados 3D 🎁" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/wop1566-kit-25-tubetes-personalizados-3d" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="product-card reveal">
-        <div class="product-photo p-balao">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="9" rx="6" ry="7"/><path d="M12 16l-1.5 3h3z"/><path d="M12 19v3"/></svg>
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F74428643-90c6-43f4-842f-b311e86ad762%3Fv%3D2025-02-09T13%3A57%3A37%2B00%3A00" alt="Kit 10 Tubetes 3D Personalizados" loading="lazy">
         </div>
         <div class="product-info">
-          <span class="product-tag">decoração</span>
-          <h3 class="product-name">Balão personalizado</h3>
-          <p class="product-desc">Bexigas temáticas com nome, número ou frase, prontas para compor o cenário da festa.</p>
+          <span class="product-tag">lembrancinhas</span>
+          <h3 class="product-name">KIT 10 TUBETES 3D PERSONALIZADOS</h3>
+          <p class="product-desc">Tubetes com apliques em 3D no tema escolhido (não acompanha doces).</p>
           <div class="product-footer">
-            <div class="product-price">valor sob consulta</div>
-            <a href="#" data-wa="Olá! Quero saber mais sobre o Balão Personalizado 🎈" class="order-btn">Pedir</a>
+            <div class="product-price">R$ 26,99</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Kit 10 Tubetes 3D Personalizados 🎁" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/swi9473-tubetes-3d---10-un" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="product-card reveal">
-        <div class="product-photo p-kit">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M3 11h18"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Fce1050bc-9879-4bf5-90c6-ad7e588980b4%3Fv%3D2026-03-15T11%3A59%3A08%2B00%3A00" alt="Kit 10 Cofrinhos Personalizados" loading="lazy">
         </div>
         <div class="product-info">
-          <span class="product-tag">tudo em um</span>
-          <h3 class="product-name">Kit festa completo</h3>
-          <p class="product-desc">Topo, caixinhas, balões e adesivos combinando entre si — só escolher o tema.</p>
+          <span class="product-tag">lembrancinhas</span>
+          <h3 class="product-name">KIT 10 COFRINHOS PERSONALIZADOS</h3>
+          <p class="product-desc">Cofrinhos personalizados no tema à sua escolha, em papel adesivo fotográfico.</p>
           <div class="product-footer">
-            <div class="product-price">valor sob consulta</div>
-            <a href="#" data-wa="Olá! Quero saber mais sobre o Kit Festa Completo 🎉" class="order-btn">Pedir</a>
-          </div>
-        </div>
-      </div>
-      <div class="product-card reveal">
-        <div class="product-photo p-etiqueta">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12l9-9h9v9l-9 9-9-9z"/><circle cx="15" cy="9" r="1.4" fill="currentColor" stroke="none"/></svg>
-        </div>
-        <div class="product-info">
-          <span class="product-tag">escola</span>
-          <h3 class="product-name">Etiqueta escolar personalizada</h3>
-          <p class="product-desc">Etiquetas resistentes para material escolar, com nome e tema à sua escolha.</p>
-          <div class="product-footer">
-            <div class="product-price">valor sob consulta</div>
-            <a href="#" data-wa="Olá! Quero saber mais sobre a Etiqueta Escolar Personalizada 🏷️" class="order-btn">Pedir</a>
+            <div class="product-price">R$ 29,99</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Kit 10 Cofrinhos Personalizados 🐷" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/kso9229-kit-10-cofrinhos-personalizados" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="product-card reveal">
-        <div class="product-photo p-laco">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 12L5 7v10l7-5z"/><path d="M12 12l7-5v10l-7-5z"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg>
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F9a41d410-8ff4-47f0-8831-6a1cdd9217b4%3Fv%3D2026-03-15T00%3A53%3A34%2B00%3A00" alt="Kit 10 Cofrinhos 3D" loading="lazy">
         </div>
         <div class="product-info">
-          <span class="product-tag">acabamento</span>
-          <h3 class="product-name">Laço personalizado</h3>
-          <p class="product-desc">Laços de fita para arrematar caixinhas, sacolinhas e embalagens com um toque especial.</p>
+          <span class="product-tag">lembrancinhas</span>
+          <h3 class="product-name">KIT 10 COFRINHOS 3D</h3>
+          <p class="product-desc">Cofrinhos em papel fotográfico adesivo brilhoso, conforme o tema escolhido.</p>
           <div class="product-footer">
-            <div class="product-price">valor sob consulta</div>
-            <a href="#" data-wa="Olá! Quero saber mais sobre o Laço Personalizado 🎀" class="order-btn">Pedir</a>
+            <div class="product-price">R$ 105,99</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Kit 10 Cofrinhos 3D 🐷" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/ebr6863-kit-10-cofrinhos-e-10-tubetes-personagens" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="product-card reveal">
-        <div class="product-photo p-impresso">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="9" width="12" height="7" rx="1"/><path d="M6 9V4h12v5"/><path d="M8 16v4h8v-4"/></svg>
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Fd7c97638-da0d-47e0-a45c-9fd6b3d83c8b%3Fv%3D2026-01-08T16%3A54%3A58%2B00%3A00" alt="Kit 2 Caixas Convites Padrinhos" loading="lazy">
         </div>
         <div class="product-info">
-          <span class="product-tag">impressão</span>
-          <h3 class="product-name">Convites e impressos personalizados</h3>
-          <p class="product-desc">Convites, tags e etiquetas impressos sob medida, combinando com o tema da sua festa.</p>
+          <span class="product-tag">casamento</span>
+          <h3 class="product-name">KIT 2 CAIXAS CONVITES PADRINHOS</h3>
+          <p class="product-desc">Par de convites em papel fotográfico brilhoso, com dois bombons e um mini terço.</p>
           <div class="product-footer">
-            <div class="product-price">valor sob consulta</div>
-            <a href="#" data-wa="Olá! Quero saber mais sobre Convites e Impressos Personalizados 🖨️" class="order-btn">Pedir</a>
+            <div class="product-price">R$ 65,99</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Kit 2 Caixas Convites Padrinhos 💍" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/rmw2680-kit-2-caixas-convites-padrinhos" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="product-card reveal">
-        <div class="product-photo p-foto">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Fe6572fb4-5966-4ce2-b0e7-715752863a6f%3Fv%3D2026-01-17T22%3A44%3A58%2B00%3A00" alt="Kit 76 Etiquetas Vinil" loading="lazy">
         </div>
         <div class="product-info">
-          <span class="product-tag">lembrança</span>
-          <h3 class="product-name">Fotos personalizadas</h3>
-          <p class="product-desc">Molduras, quadros e cartões com foto para eternizar um momento especial da festa.</p>
+          <span class="product-tag">etiquetas</span>
+          <h3 class="product-name">kit 76 etiquetas vinil</h3>
+          <p class="product-desc">76 etiquetas em vinil resistente, personalizadas no tema escolhido.</p>
           <div class="product-footer">
-            <div class="product-price">valor sob consulta</div>
-            <a href="#" data-wa="Olá! Quero saber mais sobre Fotos Personalizadas 📸" class="order-btn">Pedir</a>
+            <div class="product-price">R$ 34,50</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Kit 76 Etiquetas Vinil 🏷️" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/hhg4889-kit-76-etiquetas-vinil" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Fdf89ebc2-9f95-4a1f-a080-cbc7fd1b9ec8%3Fv%3D2026-01-17T22%3A41%3A03%2B00%3A00" alt="Kit 76 Etiquetas Fotográfico" loading="lazy">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">etiquetas</span>
+          <h3 class="product-name">Kit 76 Etiquetas fotográfico</h3>
+          <p class="product-desc">Etiquetas escolares em papel fotográfico adesivo brilhante 115g (não é à prova d'água).</p>
+          <div class="product-footer">
+            <div class="product-price">R$ 27,50</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Kit 76 Etiquetas Fotográfico 🏷️" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/veo1808-etiquetas-kit-50" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2Fef2cd308-60b3-4196-b592-17a3680ff5fe%3Fv%3D2025-06-29T14%3A21%3A05%2B00%3A00" alt="Etiquetas Garrafa Personalizada" loading="lazy">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">etiquetas</span>
+          <h3 class="product-name">Etiquetas Garrafa personalizada 10 unid</h3>
+          <p class="product-desc">Etiquetas em papel vinil para garrafas, no tema que você escolher.</p>
+          <div class="product-footer">
+            <div class="product-price">R$ 18,00</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre Etiquetas Garrafa Personalizada 🏷️" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/imt4899-etiquetas-garrafa-personalizada-50-unid" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card reveal">
+        <div class="product-photo has-photo">
+          <img src="https://assets.infinitepay.io/unsafe/3840x0/filters:quality(75)/https%3A%2F%2Finfinitepay-sales.services.production.infinitepay.io%2Fpdv%2Fv1%2Fproducts%2Fvariation%2Fmedia_proxy%2F26bce6ba-6559-4f2a-8209-bd9c4641e45c%3Fv%3D2026-01-04T12%3A53%3A46%2B00%3A00" alt="Chaveiro Acrílico Personalizado" loading="lazy">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">acessórios</span>
+          <h3 class="product-name">Chaveiro acrílico personalizado</h3>
+          <p class="product-desc">Chaveiro em acrílico com o tema, nome ou foto que você quiser.</p>
+          <div class="product-footer">
+            <div class="product-price">R$ 6,00</div>
+            <div class="product-actions">
+              <a href="#" data-wa="Olá! Quero saber mais sobre o Chaveiro Acrílico Personalizado 🔑" class="order-btn">Pedir</a>
+              <a href="https://loja.infinitepay.io/caroline-de-401/omy3090-chaveiro-acrilico-personalizado" target="_blank" rel="noopener" class="pay-btn">Pagar</a>
+            </div>
           </div>
         </div>
       </div>
